@@ -5,6 +5,7 @@
  */
 package simulador_de_banco;
 
+import ClasesClientes.CrearClientes;
 import Fomularios.SalaDeEspera;
 
 /**
@@ -13,8 +14,15 @@ import Fomularios.SalaDeEspera;
  */
 public class Simulador_De_Banco {
         private static  SalaDeEspera Formulario = new SalaDeEspera();
+        private static CrearClientes Clientes = new  CrearClientes();
+        private static int NumeroDeClientesACrear = 5;
 public static String MensajeFinal="*****************<<<<<<Este es el final del Programa>>>>>*****************";
     public static void main(String[] args) {
+    
+    for (int i=0; i < NumeroDeClientesACrear; i++){
+        System.out.println("Se esta creando el Cliente NUMERO: "+ (i+1));    
+        Clientes.CreandoCliente();
+    }    
 
     Formulario.setVisible(true);
         System.out.println(MensajeFinal);

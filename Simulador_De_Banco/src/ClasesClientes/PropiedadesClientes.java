@@ -14,6 +14,7 @@ public class PropiedadesClientes {
     public PropiedadesClientes() {
     }
 
+    
     public int Dienero = 0;
     public int Turno = -1;
 
