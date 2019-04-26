@@ -5,6 +5,7 @@
  */
 package ClasesClientes;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -19,25 +20,26 @@ public class CrearClientes extends PropiedadesClientes {
     //ArrayList
     ArrayList<PropiedadesClientes> GrupoClientes = new ArrayList<>();
     //Variables de usos
-    private static Random RMD = new Random();//La variable de Randon
+    private static final Random RMD = new Random();//La variable de Randon
 
     int MONTO = 0;
-    int Turno = 0;
+    int Turnos = 0;
     int DesignarTranaccion = -1;
     int DesignarTipoDeClientes = -1;
 
     public void CreandoCliente() {
 
         System.out.println("Se esta Creando un Cliente Nuevo");
-        EstablecerTransaccion();
-        EstablecerMonto();
         EstablecerTipoDeCliente();
         EstablcerTurno();
+        EstablcerColor();
+        EstablecerTransaccion();
+        EstablecerMonto();
 
         GrupoClientes.add(Clientes);
         //GrupoClientes.get().Turno;
         if (!GrupoClientes.isEmpty()) {
-            System.out.println("Se han guardado exitosamente Los Clientes");
+            System.out.println("Se han guardado exitosamente un cliente");
         }
     }
 
@@ -48,13 +50,13 @@ public class CrearClientes extends PropiedadesClientes {
 
         switch (DesignarTranaccion) {
             case 0:
-                Clientes.setTipoDeTransacciones(Transaccion.DEPOSITO);
+                Clientes.setTransaccion(TipoDeTransacciones.DEPOSITO);
                 break;
             case 1:
-                Clientes.setTipoDeTransacciones(Transaccion.PAGO);
+                Clientes.setTransaccion(TipoDeTransacciones.PAGO);
                 break;
             case 2:
-                Clientes.setTipoDeTransacciones(Transaccion.RETIRO);
+                Clientes.setTransaccion(TipoDeTransacciones.RETIRO);
                 break;
             default:
                 System.out.println("La Asignacion de la Transaccion esta fuera de Rango");
@@ -129,7 +131,28 @@ public class CrearClientes extends PropiedadesClientes {
 
     private void EstablcerTurno() {
         System.out.println("Se Esta Estableciendo El Turno del Cliente");
-
+        Turnos = 2;
         Clientes.setTurno(1);
+    }
+
+    private void EstablcerColor() {
+        switch (Clientes.getTipoDeCliente()) {
+            case NORMAL:
+                Clientes.setColores(Color.ORANGE);
+                break;
+            case DISCAPACITADO:
+                Clientes.setColores(Color.red);
+                break;
+            case MUJER_EMBARAZADA:
+                Clientes.setColores(Color.GREEN);
+                break;
+            case TERCERA_EDAD:
+                Clientes.setColores(Color.YELLOW);
+                break;
+            default:
+                System.err.println("Se ha salido del Rango El establecimeinto de Colores");
+                Clientes.setColores(Color.BLACK);
+                break;
+        }
     }
 }

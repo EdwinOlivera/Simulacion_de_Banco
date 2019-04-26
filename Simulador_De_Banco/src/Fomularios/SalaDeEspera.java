@@ -5,6 +5,8 @@
  */
 package Fomularios;
 
+import java.awt.Color;
+
 public class SalaDeEspera extends javax.swing.JFrame {
 
     public SalaDeEspera() {
@@ -36,7 +38,7 @@ public class SalaDeEspera extends javax.swing.JFrame {
         jSeparator11 = new javax.swing.JSeparator();
         jSeparator12 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
+        Asiento1 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -168,7 +170,10 @@ public class SalaDeEspera extends javax.swing.JFrame {
         jSeparator12.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jSeparator12.setEnabled(false);
 
-        jLabel8.setText("Asiento #1");
+        Asiento1.setBackground(new java.awt.Color(0, 0, 0));
+        Asiento1.setForeground(new java.awt.Color(255, 255, 0));
+        Asiento1.setLabelFor(Asiento1);
+        Asiento1.setText("Asiento #1");
 
         jLabel9.setText("Asiento #2");
 
@@ -196,7 +201,7 @@ public class SalaDeEspera extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel8)
+                        .addComponent(Asiento1)
                         .addGap(31, 31, 31)
                         .addComponent(jLabel9)
                         .addGap(32, 32, 32)
@@ -221,7 +226,7 @@ public class SalaDeEspera extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
+                    .addComponent(Asiento1)
                     .addComponent(jLabel9)
                     .addComponent(jLabel10)
                     .addComponent(jLabel11)
@@ -514,6 +519,7 @@ public class SalaDeEspera extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -534,12 +540,20 @@ public class SalaDeEspera extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+    
         java.awt.EventQueue.invokeLater(() -> {
             new SalaDeEspera().setVisible(true);
         });
     }
+            
+        public void HacerAlgo(){
+            Asiento1.setOpaque(true);
+            Asiento1.setBackground(Color.BLACK);
+            Asiento1.setForeground(Color.red);
+        }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Asiento1;
     private javax.swing.JProgressBar BarraNumero1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -559,7 +573,6 @@ public class SalaDeEspera extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;

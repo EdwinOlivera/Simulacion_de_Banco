@@ -5,6 +5,8 @@
  */
 package ClasesClientes;
 
+import java.awt.Color;
+
 /**
  *
  * @author Edwin
@@ -14,7 +16,7 @@ public class PropiedadesClientes {
     public PropiedadesClientes() {
     }
 
-    
+    public Color Colores;
     public int Dienero = 0;
     public int Turno = -1;
 
@@ -27,13 +29,6 @@ public class PropiedadesClientes {
     }
 
     //set y get
-    public TipoDeTransacciones getTipoDeTransacciones() {
-        return Transaccion;
-    }
-
-    public void setTipoDeTransacciones(TipoDeTransacciones Transaccion) {
-        this.Transaccion = Transaccion;
-    }
 
     public TipoDeClientes getTipoDeCliente() {
         return TipoDeCliente;
@@ -41,6 +36,22 @@ public class PropiedadesClientes {
 
     public void setTipoDeCliente(TipoDeClientes TipoDeCliente) {
         this.TipoDeCliente = TipoDeCliente;
+    }
+
+    public Color getColores() {
+        return Colores;
+    }
+
+    public void setColores(Color Colores) {
+        this.Colores = Colores;
+    }
+
+    public TipoDeTransacciones getTransaccion() {
+        return Transaccion;
+    }
+
+    public void setTransaccion(TipoDeTransacciones Transaccion) {
+        this.Transaccion = Transaccion;
     }
 
     public int getDienero() {
