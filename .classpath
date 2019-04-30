@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="Simulador_De_Banco/src"/>
+	<classpathentry kind="lib" path="Simulador_De_Banco/RSProgressBar.jar"/>
+	<classpathentry kind="lib" path="Simulador_De_Banco/RSScaleLabel.jar"/>
+	<classpathentry kind="output" path="Simulador_De_Banco/build/classes"/>
+</classpath>
