@@ -7,6 +7,7 @@ package simulador_de_banco;
 
 import ClasesClientes.CrearClientes;
 import Fomularios.SalaDeEspera;
+import Fomularios.VariasBarrasDeProgreso;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.JLabel;
@@ -26,12 +27,13 @@ public class Simulador_De_Banco extends Thread {
     //objetos 
     private static SalaDeEspera Formulario = new SalaDeEspera();
     private static CrearClientes Clientes = new CrearClientes();
+    private static VariasBarrasDeProgreso barras = new VariasBarrasDeProgreso();
     //Variables 
     private static Random rdm = new Random(System.currentTimeMillis());
     private static int NumeroDeClientesACrear = 5;
 
     public static void main(String[] args) throws InterruptedException {
-        
+
         CosasIniciales();
         //For Para Crear Clientes a voluntad
         for (int i = 0; i < NumeroDeClientesACrear; i++) {
@@ -48,7 +50,8 @@ public class Simulador_De_Banco extends Thread {
     private static void CosasIniciales()//En esta funcion se realizan las operaciones basicas e iniciales de todo el sistema
     {
         System.out.println("Se Esta incializando el sistema. Haciendo las operaciones basicas");
-        Formulario.setVisible(true);
+        barras.setVisible(true);
+//Formulario.setVisible(true);
         Formulario.EstablecerCaracteristicas();
         Asientos = Formulario.GuardarArrayListDeAsientos(Asientos);
         BarrasDeProgreso = Formulario.GuardarBarraDeProgresoDeCajeros(BarrasDeProgreso);
