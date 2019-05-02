@@ -6,6 +6,9 @@
 package Fomularios;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import javax.swing.JLabel;
+import javax.swing.JProgressBar;
 
 public class SalaDeEspera extends javax.swing.JFrame {
 
@@ -39,15 +42,15 @@ public class SalaDeEspera extends javax.swing.JFrame {
         jSeparator12 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
         Asiento1 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        Asiento2 = new javax.swing.JLabel();
+        Asiento3 = new javax.swing.JLabel();
+        Asiento4 = new javax.swing.JLabel();
+        Asiento5 = new javax.swing.JLabel();
+        Asiento10 = new javax.swing.JLabel();
+        Asiento9 = new javax.swing.JLabel();
+        Asiento8 = new javax.swing.JLabel();
+        Asiento7 = new javax.swing.JLabel();
+        Asiento6 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -56,23 +59,35 @@ public class SalaDeEspera extends javax.swing.JFrame {
         jSeparator13 = new javax.swing.JSeparator();
         jSeparator14 = new javax.swing.JSeparator();
         jSeparator15 = new javax.swing.JSeparator();
-        BarraNumero1 = new javax.swing.JProgressBar();
-        jProgressBar2 = new javax.swing.JProgressBar();
-        jProgressBar3 = new javax.swing.JProgressBar();
+        BarraProgreso1 = new javax.swing.JProgressBar();
+        BarraProgreso2 = new javax.swing.JProgressBar();
+        BarraProgreso3 = new javax.swing.JProgressBar();
+        EspacioCliente1 = new javax.swing.JLabel();
+        EspacioCliente2 = new javax.swing.JLabel();
+        EspacioCliente3 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jSeparator16 = new javax.swing.JSeparator();
         jSeparator17 = new javax.swing.JSeparator();
         jSeparator18 = new javax.swing.JSeparator();
         jSeparator19 = new javax.swing.JSeparator();
+        lblTipoCliente2 = new javax.swing.JLabel();
+        lblTipoCliente3 = new javax.swing.JLabel();
+        lblTipoCliente1 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jSeparator20 = new javax.swing.JSeparator();
         jSeparator23 = new javax.swing.JSeparator();
         jSeparator22 = new javax.swing.JSeparator();
         jSeparator21 = new javax.swing.JSeparator();
+        lblOperacion1 = new javax.swing.JLabel();
+        lblOperacion2 = new javax.swing.JLabel();
+        lblOperacion3 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
         jSeparator25 = new javax.swing.JSeparator();
         jSeparator26 = new javax.swing.JSeparator();
         jSeparator24 = new javax.swing.JSeparator();
+        lblMonto1 = new javax.swing.JLabel();
+        lblMonto2 = new javax.swing.JLabel();
+        lblMonto3 = new javax.swing.JLabel();
         jSeparator27 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -175,23 +190,23 @@ public class SalaDeEspera extends javax.swing.JFrame {
         Asiento1.setLabelFor(Asiento1);
         Asiento1.setText("Asiento #1");
 
-        jLabel9.setText("Asiento #2");
+        Asiento2.setText("Asiento #2");
 
-        jLabel10.setText("Asiento #3");
+        Asiento3.setText("Asiento #3");
 
-        jLabel11.setText("Asiento #4");
+        Asiento4.setText("Asiento #4");
 
-        jLabel12.setText("Asiento #5");
+        Asiento5.setText("Asiento #5");
 
-        jLabel13.setText("Asiento #10");
+        Asiento10.setText("Asiento #10");
 
-        jLabel14.setText("Asiento #9");
+        Asiento9.setText("Asiento #9");
 
-        jLabel15.setText("Asiento #8");
+        Asiento8.setText("Asiento #8");
 
-        jLabel16.setText("Asiento #7");
+        Asiento7.setText("Asiento #7");
 
-        jLabel17.setText("Asiento #6");
+        Asiento6.setText("Asiento #6");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -203,23 +218,23 @@ public class SalaDeEspera extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(Asiento1)
                         .addGap(31, 31, 31)
-                        .addComponent(jLabel9)
+                        .addComponent(Asiento2)
                         .addGap(32, 32, 32)
-                        .addComponent(jLabel10)
+                        .addComponent(Asiento3)
                         .addGap(41, 41, 41)
-                        .addComponent(jLabel11)
+                        .addComponent(Asiento4)
                         .addGap(43, 43, 43)
-                        .addComponent(jLabel12))
+                        .addComponent(Asiento5))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel17)
+                        .addComponent(Asiento6)
                         .addGap(31, 31, 31)
-                        .addComponent(jLabel16)
+                        .addComponent(Asiento7)
                         .addGap(32, 32, 32)
-                        .addComponent(jLabel15)
+                        .addComponent(Asiento8)
                         .addGap(41, 41, 41)
-                        .addComponent(jLabel14)
+                        .addComponent(Asiento9)
                         .addGap(43, 43, 43)
-                        .addComponent(jLabel13)))
+                        .addComponent(Asiento10)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -227,24 +242,27 @@ public class SalaDeEspera extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Asiento1)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12))
+                    .addComponent(Asiento2)
+                    .addComponent(Asiento3)
+                    .addComponent(Asiento4)
+                    .addComponent(Asiento5))
                 .addGap(36, 36, 36)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel14)
-                    .addComponent(jLabel13))
+                    .addComponent(Asiento6)
+                    .addComponent(Asiento7)
+                    .addComponent(Asiento8)
+                    .addComponent(Asiento9)
+                    .addComponent(Asiento10))
                 .addGap(0, 22, Short.MAX_VALUE))
         );
 
+        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel18.setText("Cajero #1");
 
+        jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel19.setText("Cajero #2");
 
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel20.setText("Cajero #3");
 
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -262,31 +280,26 @@ public class SalaDeEspera extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(1, 1, 1)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BarraNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addComponent(jLabel18)))
+                    .addComponent(BarraProgreso1, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(EspacioCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(jLabel19)))
+                    .addComponent(BarraProgreso2, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(EspacioCliente2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jProgressBar3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel20)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BarraProgreso3, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(EspacioCliente3, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
                 .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -296,23 +309,24 @@ public class SalaDeEspera extends javax.swing.JFrame {
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSeparator13, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addContainerGap(74, Short.MAX_VALUE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(BarraNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jProgressBar2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jProgressBar3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addComponent(jSeparator14)
-                    .addComponent(jSeparator15, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jSeparator15, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EspacioCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EspacioCliente2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EspacioCliente3, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel20)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel18))
+                        .addGap(4, 4, 4)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(BarraProgreso1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BarraProgreso2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(BarraProgreso3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
 
@@ -324,17 +338,29 @@ public class SalaDeEspera extends javax.swing.JFrame {
 
         jSeparator19.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+        lblTipoCliente2.setText("jLabel8");
+
+        lblTipoCliente3.setText("jLabel8");
+
+        lblTipoCliente1.setText("jLabel10");
+
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(158, 158, 158)
-                .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(164, 164, 164)
-                .addComponent(jSeparator18, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator16, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTipoCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(jSeparator17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblTipoCliente2, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTipoCliente3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator19, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -343,10 +369,13 @@ public class SalaDeEspera extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTipoCliente2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSeparator17, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
                     .addComponent(jSeparator16)
                     .addComponent(jSeparator18, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
-                    .addComponent(jSeparator19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE))
+                    .addComponent(jSeparator19, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                    .addComponent(lblTipoCliente1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblTipoCliente3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -358,18 +387,31 @@ public class SalaDeEspera extends javax.swing.JFrame {
 
         jSeparator21.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+        lblOperacion1.setText("jLabel8");
+
+        lblOperacion2.setText("jLabel9");
+
+        lblOperacion3.setText("jLabel10");
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addComponent(jSeparator23, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(158, 158, 158)
-                .addComponent(jSeparator22, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(164, 164, 164)
-                .addComponent(jSeparator21, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jSeparator20, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, 0)
+                .addComponent(lblOperacion1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16)
+                .addComponent(lblOperacion2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblOperacion3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -377,6 +419,13 @@ public class SalaDeEspera extends javax.swing.JFrame {
             .addComponent(jSeparator23)
             .addComponent(jSeparator21, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
             .addComponent(jSeparator20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblOperacion3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblOperacion2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblOperacion1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jSeparator25.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -385,23 +434,45 @@ public class SalaDeEspera extends javax.swing.JFrame {
 
         jSeparator24.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+        lblMonto1.setText("jLabel8");
+
+        lblMonto2.setText("jLabel9");
+
+        lblMonto3.setText("jLabel10");
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel10Layout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(jSeparator26, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(166, 166, 166)
-                .addComponent(jSeparator25, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblMonto1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblMonto2, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblMonto3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSeparator24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator26, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
             .addComponent(jSeparator25, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
             .addComponent(jSeparator24, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(lblMonto2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addComponent(lblMonto1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addComponent(lblMonto3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jSeparator27.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -422,19 +493,19 @@ public class SalaDeEspera extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jSeparator8)
-                    .addComponent(jSeparator9, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
-                    .addComponent(jSeparator10, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
-                    .addComponent(jSeparator11, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
-                    .addComponent(jSeparator12, javax.swing.GroupLayout.DEFAULT_SIZE, 556, Short.MAX_VALUE)
+                    .addComponent(jSeparator9)
+                    .addComponent(jSeparator10)
+                    .addComponent(jSeparator11)
+                    .addComponent(jSeparator12)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jSeparator27, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSeparator27, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                        .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -449,9 +520,9 @@ public class SalaDeEspera extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -536,34 +607,156 @@ public class SalaDeEspera extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(SalaDeEspera.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         //</editor-fold>
 
         /* Create and display the form */
-    
         java.awt.EventQueue.invokeLater(() -> {
             new SalaDeEspera().setVisible(true);
         });
     }
-            
-        public void HacerAlgo(){
-            Asiento1.setOpaque(true);
-            Asiento1.setBackground(Color.BLACK);
-            Asiento1.setForeground(Color.red);
-        }
 
+    public void EstablecerCaracteristicas() {
+        ModificarEtiquetas();
+
+    }
+
+    public void ModificarEtiquetas() {
+        //----------Asientos del 1 al 5------------
+        Asiento1.setOpaque(true);
+        Asiento1.setBackground(Color.BLACK);
+        Asiento1.setForeground(Color.red);
+
+        Asiento2.setOpaque(true);
+        Asiento2.setBackground(Color.BLACK);
+        Asiento2.setForeground(Color.red);
+
+        Asiento3.setOpaque(true);
+        Asiento3.setBackground(Color.BLACK);
+        Asiento3.setForeground(Color.red);
+
+        Asiento4.setOpaque(true);
+        Asiento4.setBackground(Color.BLACK);
+        Asiento4.setForeground(Color.red);
+
+        Asiento5.setOpaque(true);
+        Asiento5.setBackground(Color.BLACK);
+        Asiento5.setForeground(Color.red);
+
+        //----------Asientos del 6 al 10------------
+        Asiento6.setOpaque(true);
+        Asiento6.setBackground(Color.BLACK);
+        Asiento6.setForeground(Color.red);
+
+        Asiento7.setOpaque(true);
+        Asiento7.setBackground(Color.BLACK);
+        Asiento7.setForeground(Color.red);
+
+        Asiento8.setOpaque(true);
+        Asiento8.setBackground(Color.BLACK);
+        Asiento8.setForeground(Color.red);
+
+        Asiento9.setOpaque(true);
+        Asiento9.setBackground(Color.BLACK);
+        Asiento9.setForeground(Color.red);
+
+        Asiento10.setOpaque(true);
+        Asiento10.setBackground(Color.BLACK);
+        Asiento10.setForeground(Color.red);
+
+    }
+
+    //FUNCIONES PARA CREAR LOS ARRAYLIS NECESARIOS
+    public ArrayList<JProgressBar> GuardarBarraDeProgresoDeCajeros(ArrayList<JProgressBar> ArrayListDeBarra) {
+        //Guarda cada una de las barras de progreso en el ArrayList para poder acceder a ellos despues
+        System.out.println(":/ Se guardaran todos Las barras de Progreso en el ArrayList");
+        ArrayListDeBarra.add(0, BarraProgreso1);
+        ArrayListDeBarra.add(1, BarraProgreso2);
+        ArrayListDeBarra.add(2, BarraProgreso3);
+        System.out.println(":) Se ha guardado todos Las barras de Progreso en el ArrayList");
+        return ArrayListDeBarra;
+    }
+
+    public ArrayList<JLabel> GuardarArrayListDeAsientos(ArrayList<JLabel> ArrayListDeLabel) {
+        //Guarda cada uno de los asientos en el ArrayList para poder acceder a ellos despues
+        System.out.println(":/ Se guardaran todos los Asientos en el ArrayList");
+        ArrayListDeLabel.add(0, Asiento1);
+        ArrayListDeLabel.add(1, Asiento2);
+        ArrayListDeLabel.add(2, Asiento3);
+        ArrayListDeLabel.add(3, Asiento4);
+        ArrayListDeLabel.add(4, Asiento5);
+        ArrayListDeLabel.add(5, Asiento6);
+        ArrayListDeLabel.add(6, Asiento7);
+        ArrayListDeLabel.add(7, Asiento8);
+        ArrayListDeLabel.add(8, Asiento9);
+        ArrayListDeLabel.add(9, Asiento10);
+        System.out.println(":) Se han guardado todos los Asientos en el ArrayList");
+        return ArrayListDeLabel;
+    }
+
+    public ArrayList<JLabel> GuardarArrayListDeTipoDeCliente(ArrayList<JLabel> EspacioDeTipoDeCliente) {
+        System.out.println("Creando el Arraylist de TIPO DE CLIENTE");
+        EspacioDeTipoDeCliente.add(0, lblTipoCliente1);
+        EspacioDeTipoDeCliente.add(1, lblTipoCliente2);
+        EspacioDeTipoDeCliente.add(2, lblTipoCliente3);
+        System.out.println("Fin de la creacion del Arraylist de TIPO DE CLIENTE");
+        return EspacioDeTipoDeCliente;
+    }
+
+    public ArrayList<JLabel> GuardarArrayListDeMonto(ArrayList<JLabel> EspacioDeMonto) {
+        System.out.println("Creando el Arraylist de MONTO");
+        EspacioDeMonto.add(0, lblMonto1);
+        EspacioDeMonto.add(1, lblMonto2);
+        EspacioDeMonto.add(2, lblMonto3);
+        System.out.println("Fin de la creacion del Arraylist de MONTO");
+        return EspacioDeMonto;
+    }
+
+    public ArrayList<JLabel> GuardarArrayListDeOperacion(ArrayList<JLabel> EspacioDeOperacion) {
+        System.out.println("Creando el Arraylist de OPERACION");
+        EspacioDeOperacion.add(0, lblOperacion1);
+        EspacioDeOperacion.add(1, lblOperacion2);
+        EspacioDeOperacion.add(2, lblOperacion3);
+        System.out.println("Fin de la creacion del Arraylist de OPERACION");
+        return EspacioDeOperacion;
+    }
+    /*********************************************************/
+    
+    
+    public void EstablecerClientesEnAsiento() {
+
+    }
+
+    //LAS FUNCIONES PARA LAS OPERACIONES DE LOS CAJEROS
+    public void CosasDelCajero1() {
+
+    }
+
+    public void CosasDelCajero2() {
+
+    }
+
+    public void CosasDelCajero3() {
+
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Asiento1;
-    private javax.swing.JProgressBar BarraNumero1;
+    private static javax.swing.JLabel Asiento1;
+    private static javax.swing.JLabel Asiento10;
+    private javax.swing.JLabel Asiento2;
+    private static javax.swing.JLabel Asiento3;
+    private static javax.swing.JLabel Asiento4;
+    private static javax.swing.JLabel Asiento5;
+    private static javax.swing.JLabel Asiento6;
+    private static javax.swing.JLabel Asiento7;
+    private static javax.swing.JLabel Asiento8;
+    private static javax.swing.JLabel Asiento9;
+    private javax.swing.JProgressBar BarraProgreso1;
+    private javax.swing.JProgressBar BarraProgreso2;
+    private javax.swing.JProgressBar BarraProgreso3;
+    private javax.swing.JLabel EspacioCliente1;
+    private javax.swing.JLabel EspacioCliente2;
+    private javax.swing.JLabel EspacioCliente3;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
@@ -573,7 +766,6 @@ public class SalaDeEspera extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
@@ -582,8 +774,6 @@ public class SalaDeEspera extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JProgressBar jProgressBar2;
-    private javax.swing.JProgressBar jProgressBar3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator11;
@@ -612,5 +802,14 @@ public class SalaDeEspera extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JLabel lblMonto1;
+    private javax.swing.JLabel lblMonto2;
+    private javax.swing.JLabel lblMonto3;
+    private javax.swing.JLabel lblOperacion1;
+    private javax.swing.JLabel lblOperacion2;
+    private javax.swing.JLabel lblOperacion3;
+    private javax.swing.JLabel lblTipoCliente1;
+    private javax.swing.JLabel lblTipoCliente2;
+    private javax.swing.JLabel lblTipoCliente3;
     // End of variables declaration//GEN-END:variables
 }

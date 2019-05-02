@@ -18,7 +18,7 @@ public class CrearClientes extends PropiedadesClientes {
     // Objetos 
     PropiedadesClientes Clientes = new PropiedadesClientes();
     //ArrayList
-    ArrayList<PropiedadesClientes> GrupoClientes = new ArrayList<>();
+    private static ArrayList<PropiedadesClientes> GrupoClientes = new ArrayList<>();
     //Variables de usos
     private static final Random RMD = new Random();//La variable de Randon
 
@@ -42,7 +42,9 @@ public class CrearClientes extends PropiedadesClientes {
             System.out.println("Se han guardado exitosamente un cliente");
         }
     }
-
+public ArrayList<PropiedadesClientes> RecuperarClientes(){
+    return GrupoClientes;
+}
     private void EstablecerTransaccion() {
         System.out.println("*******************************************");
         System.out.println("Se esta Asignado La Transaccion");
