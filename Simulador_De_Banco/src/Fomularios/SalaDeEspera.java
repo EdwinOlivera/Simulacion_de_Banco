@@ -12,6 +12,9 @@ import javax.swing.JProgressBar;
 
 public class SalaDeEspera extends javax.swing.JFrame {
 
+    //Lo necesario Para que se llenen las barras
+    private static int TiempoDeEsPera1=0, TiempoDeEsPera2=0, TiempoDeEsPera3=0;
+    
     public SalaDeEspera() {
         initComponents();
     }
@@ -186,7 +189,7 @@ public class SalaDeEspera extends javax.swing.JFrame {
         jSeparator12.setEnabled(false);
 
         Asiento1.setBackground(new java.awt.Color(0, 0, 0));
-        Asiento1.setForeground(new java.awt.Color(255, 255, 0));
+        Asiento1.setForeground(new java.awt.Color(255, 153, 0));
         Asiento1.setLabelFor(Asiento1);
         Asiento1.setText("Asiento #1");
 
@@ -590,7 +593,7 @@ public class SalaDeEspera extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

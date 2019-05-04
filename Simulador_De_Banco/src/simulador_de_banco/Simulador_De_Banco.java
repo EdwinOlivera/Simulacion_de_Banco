@@ -8,6 +8,7 @@ package simulador_de_banco;
 import ClasesClientes.CrearClientes;
 import Fomularios.SalaDeEspera;
 import Fomularios.VariasBarrasDeProgreso;
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.JLabel;
@@ -47,14 +48,41 @@ public class Simulador_De_Banco extends Thread {
         System.out.println(MensajeFinal);
     }
 
-    private static void CosasIniciales()//En esta funcion se realizan las operaciones basicas e iniciales de todo el sistema
+    private static void CosasIniciales() throws InterruptedException//En esta funcion se realizan las operaciones basicas e iniciales de todo el sistema
     {
         System.out.println("Se Esta incializando el sistema. Haciendo las operaciones basicas");
-        barras.setVisible(true);
-//Formulario.setVisible(true);
+        //barras.setVisible(true);
+        Formulario.setVisible(true);
         Formulario.EstablecerCaracteristicas();
         Asientos = Formulario.GuardarArrayListDeAsientos(Asientos);
         BarrasDeProgreso = Formulario.GuardarBarraDeProgresoDeCajeros(BarrasDeProgreso);
+        for (int i = 0; i < Asientos.size(); i++) {
+            
+            if (i < 1) {
+                Asientos.get(i).setBackground(Color.red);
+                Asientos.get(i).setForeground(Color.white);
+                Asientos.get(i).setOpaque(true);
+
+            } else {
+                Asientos.get(i).setBackground(Color.red);
+                Asientos.get(i).setForeground(Color.white);
+                Asientos.get(i).setOpaque(true);
+                Asientos.get(i - 1).setBackground(Color.LIGHT_GRAY);
+                Asientos.get(i - 1).setForeground(Color.RED);
+                Asientos.get(i - 1).setOpaque(true);
+            }
+            if (i == Asientos.size() - 1) {
+                i = -1;
+            }
+            Thread.sleep(1000);
+            if (i == -1) {
+                Asientos.get(Asientos.size() - 1).setBackground(Color.LIGHT_GRAY);
+                Asientos.get(Asientos.size() - 1).setForeground(Color.red);
+                Asientos.get(Asientos.size() - 1).setOpaque(true);
+            }
+
+        }
+
     }
 
     private static boolean Continuar(int CantidadAEsperar, int TurnoDecajero) throws InterruptedException {
