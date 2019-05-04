@@ -24,6 +24,10 @@ public class Simulador_De_Banco extends Thread {
 
     //ArrayList
     private static ArrayList<JLabel> Asientos = new ArrayList<>();
+    private static ArrayList<JLabel> Montos = new ArrayList<>();
+    private static ArrayList<JLabel> TipoDeClientes = new ArrayList<>();
+    private static ArrayList<JLabel> Operaciones = new ArrayList<>();
+    private static ArrayList<JLabel> EspaciosDeClientes = new ArrayList<>();
     private static ArrayList<JProgressBar> BarrasDeProgreso = new ArrayList<>();
     //objetos 
     private static SalaDeEspera Formulario = new SalaDeEspera();
@@ -56,8 +60,15 @@ public class Simulador_De_Banco extends Thread {
         Formulario.EstablecerCaracteristicas();
         Asientos = Formulario.GuardarArrayListDeAsientos(Asientos);
         BarrasDeProgreso = Formulario.GuardarBarraDeProgresoDeCajeros(BarrasDeProgreso);
-        for (int i = 0; i < Asientos.size(); i++) {
-            
+        
+        Montos= Formulario.GuardarArrayListDeMonto(Montos);
+        TipoDeClientes = Formulario.GuardarArrayListDeTipoDeCliente(TipoDeClientes);
+        Operaciones= Formulario.GuardarArrayListDeOperacion(Operaciones);
+//        EspaciosDeClientes= Formulario.GuardarArrayListDe(EspaciosDeClientes);
+        for (int i = 0;
+                i < Asientos.size();
+                i++) {
+
             if (i < 1) {
                 Asientos.get(i).setBackground(Color.red);
                 Asientos.get(i).setForeground(Color.white);

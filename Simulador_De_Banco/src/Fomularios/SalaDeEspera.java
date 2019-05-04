@@ -670,6 +670,14 @@ public class SalaDeEspera extends javax.swing.JFrame {
     }
 
     //FUNCIONES PARA CREAR LOS ARRAYLIS NECESARIOS
+    public ArrayList<JLabel> GuardarArrayListDeEspacioDeClientes(ArrayList<JLabel> ArrayListDeEspacioDeClientes){
+        ArrayListDeEspacioDeClientes.add(0,EspacioCliente1);
+        ArrayListDeEspacioDeClientes.add(1,EspacioCliente2);
+        ArrayListDeEspacioDeClientes.add(2,EspacioCliente3);
+        
+        return ArrayListDeEspacioDeClientes;
+    }
+    
     public ArrayList<JProgressBar> GuardarBarraDeProgresoDeCajeros(ArrayList<JProgressBar> ArrayListDeBarra) {
         //Guarda cada una de las barras de progreso en el ArrayList para poder acceder a ellos despues
         System.out.println(":/ Se guardaran todos Las barras de Progreso en el ArrayList");
