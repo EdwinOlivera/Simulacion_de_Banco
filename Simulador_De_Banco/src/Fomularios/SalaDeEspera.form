@@ -779,20 +779,9 @@
                       <Component id="jSeparator26" alignment="0" pref="51" max="32767" attributes="0"/>
                       <Component id="jSeparator25" alignment="0" pref="51" max="32767" attributes="0"/>
                       <Component id="jSeparator24" alignment="1" pref="51" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="lblMonto2" max="32767" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="lblMonto1" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="lblMonto3" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="lblMonto3" alignment="0" max="32767" attributes="0"/>
+                      <Component id="lblMonto1" max="32767" attributes="0"/>
+                      <Component id="lblMonto2" alignment="1" max="32767" attributes="0"/>
                   </Group>
                 </DimensionLayout>
               </Layout>
