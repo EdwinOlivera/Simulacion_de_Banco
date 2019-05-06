@@ -51,7 +51,11 @@ public class Simulador_De_Banco extends Thread {
             try {
                 for (ValorBarraCajero_2 = 0; ValorBarraCajero_2 < 100; ValorBarraCajero_2++) {
                     BarrasDeProgreso.get(1).setValue(ValorBarraCajero_2);
-                    Cajero1.sleep(TiempoCajero_3 * 70);
+                    Cajero1.sleep(TiempoCajero_2 * 70);
+                    if (ValorBarraCajero_2 == 100 - 1) {
+                        ValorBarraCajero_2 = 0;
+                        Continuar(1);
+                    }
                 }
             } catch (Exception e) {
 
@@ -69,6 +73,10 @@ public class Simulador_De_Banco extends Thread {
                 for (ValorBarraCajero_3 = 0; ValorBarraCajero_3 < 100; ValorBarraCajero_3++) {
                     BarrasDeProgreso.get(2).setValue(ValorBarraCajero_3);
                     Cajero1.sleep(TiempoCajero_3 * 80);
+                    if (ValorBarraCajero_3 == 100 - 1) {
+                        ValorBarraCajero_3 = 0;
+                        Continuar(1);
+                    }
                 }
             } catch (Exception e) {
 
@@ -116,7 +124,7 @@ public class Simulador_De_Banco extends Thread {
 
             System.out.println("El tipo de Cliente del actual cliente es: " + TodosLosClientes.get(i).getTipoDeCliente());
         }
-        //CosasIniciales();
+        CosasIniciales();
 
         //Iniciar los cajeros
         //IniciarLosCajeros();
@@ -138,6 +146,7 @@ public class Simulador_De_Banco extends Thread {
         TipoDeClientes = Formulario.GuardarArrayListDeTipoDeCliente(TipoDeClientes);
         Operaciones = Formulario.GuardarArrayListDeOperacion(Operaciones);
         EspaciosDeClientes = Formulario.GuardarArrayListDeEspacioDeClientes(EspaciosDeClientes);
+
         //Probando el comportamiento
         for (int i = 0; i < Asientos.size(); i++) {
 
@@ -146,35 +155,11 @@ public class Simulador_De_Banco extends Thread {
                 Asientos.get(i).setBackground(TodosLosClientes.get(i).getColores());
                 Asientos.get(i).setForeground(Color.BLACK);
                 Asientos.get(i).setOpaque(true);
-                Montos.get(0).setText(Integer.toString(TodosLosClientes.get(9).getDienero()));
-                Cajero1.start();
-
-            } else {
-                Asientos.get(i).setBackground(TodosLosClientes.get(i).getColores());
-                Asientos.get(i).setForeground(Color.BLACK);
-                Asientos.get(i).setOpaque(true);
-                Montos.get(1).setText(Integer.toString(TodosLosClientes.get(5).getDienero()));
-                Asientos.get(i - 1).setBackground(Color.LIGHT_GRAY);
-                Asientos.get(i - 1).setForeground(Color.RED);
-                Asientos.get(i - 1).setOpaque(true);
-            }
-            if (i == Asientos.size() - 1) {
-                Cajero2.start();
-                Montos.get(2).setText(Integer.toString(TodosLosClientes.get(i).getDienero()));
-                i = -1;
-            }
-            Thread.sleep(1000);
-            if (i == -1) {
-
-                Cajero3.start();
-                Asientos.get(Asientos.size() - 1).setBackground(Color.LIGHT_GRAY);
-                Asientos.get(Asientos.size() - 1).setForeground(Color.red);
-                Asientos.get(Asientos.size() - 1).setOpaque(true);
-                i = Asientos.size();
-            }
+            Thread.sleep(10);
 
         }
-
+        }
+        IniciarLosCajeros();
     }
 
     private static void Continuar(int TurnoDecajero) throws InterruptedException {
@@ -183,16 +168,30 @@ public class Simulador_De_Banco extends Thread {
         switch (TurnoDecajero) {
             case 1:
 
+                System.out.println("Cajero 1");
             case 2:
+                System.out.println("Cajero 2");
 
             case 3:
+                System.out.println("Cajero 3");
 
         }
 
     }
 
-    private static void IniciarLosCajeros() {
+    private static void IniciarLosCajeros() throws InterruptedException {
 
+
+        for (int L = 1; L < 4; L++) {
+            Continuar(L);
+        }
+         Thread.sleep(500);
+        Cajero1.start();
+        Thread.sleep(500);
+        Cajero2.start();
+        Thread.sleep(500);
+        Cajero3.start();
+        Thread.sleep(500);
     }
 
 }
