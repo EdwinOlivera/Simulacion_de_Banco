@@ -32,7 +32,7 @@ public class Simulador_De_Banco extends Thread {
                 for (ValorBarraCajero_1 = 0; ValorBarraCajero_1 < 100; ValorBarraCajero_1++) {
                     BarrasDeProgreso.get(0).setValue(ValorBarraCajero_1);
                     Cajero1.sleep(TiempoCajero_1 * 50);
-                    if (ValorBarraCajero_1 == 100 - 1) {
+                    if (ValorBarraCajero_1 == 99 - 1) {
                         ValorBarraCajero_1 = 0;
                         Continuar(1);
                     }
@@ -87,6 +87,8 @@ public class Simulador_De_Banco extends Thread {
     public static int TiempoCajero1 = -1;
     public static int TiempoCajero2 = -1;
     public static int TiempoCajero3 = -1;
+    public static int TurnoGlobales = -1;//Este determina quien es el siguien en la fila
+    public static int CrearClientesNuevos = 0;//con esta variable se asegura nunca dejar de tener clientes nuevos
 
     //PRIVADAS STATIC
     //ArrayList
@@ -118,12 +120,14 @@ public class Simulador_De_Banco extends Thread {
             Clientes.CreandoCliente();
         }
         TodosLosClientes = Clientes.RecuperarClientes();
-        System.out.println("Imprimiendo la informacion de Prueba");
-        for (int i = 0; i < NumeroDeClientesACrear; i++) {
-            System.out.println("Se esta imprimiendo el Cliente NUMERO: " + (i + 1));
-
-            System.out.println("El tipo de Cliente del actual cliente es: " + TodosLosClientes.get(i).getTipoDeCliente());
-        }
+        /**
+         * System.out.println("Imprimiendo la informacion de Prueba"); for (int
+         * i = 0; i < NumeroDeClientesACrear; i++) { System.out.println("Se esta
+         * imprimiendo el Cliente NUMERO: " + (i + 1));
+         *
+         * System.out.println("El tipo de Cliente del actual cliente es: " +
+         * TodosLosClientes.get(i).getTipoDeCliente()); }
+         */
         CosasIniciales();
 
         //Iniciar los cajeros
@@ -142,6 +146,8 @@ public class Simulador_De_Banco extends Thread {
         Formulario.EstablecerCaracteristicas();//Establece la forma de verse inicialmente el formulario
         Asientos = Formulario.GuardarArrayListDeAsientos(Asientos);
         BarrasDeProgreso = Formulario.GuardarBarraDeProgresoDeCajeros(BarrasDeProgreso);
+
+        //Las propiedades de los clientes (Son las etiquetas)
         Montos = Formulario.GuardarArrayListDeMonto(Montos);
         TipoDeClientes = Formulario.GuardarArrayListDeTipoDeCliente(TipoDeClientes);
         Operaciones = Formulario.GuardarArrayListDeOperacion(Operaciones);
@@ -155,9 +161,9 @@ public class Simulador_De_Banco extends Thread {
                 Asientos.get(i).setBackground(TodosLosClientes.get(i).getColores());
                 Asientos.get(i).setForeground(Color.BLACK);
                 Asientos.get(i).setOpaque(true);
-            Thread.sleep(10);
+                Thread.sleep(10);
 
-        }
+            }
         }
         IniciarLosCajeros();
     }
@@ -167,25 +173,67 @@ public class Simulador_De_Banco extends Thread {
 
         switch (TurnoDecajero) {
             case 1:
-
-                System.out.println("Cajero 1");
+                TurnoGlobales = TodosLosClientes.size() - 1;
+                System.out.println("Inciando las operaciones del Cajero 1");
+                System.out.println("Tamaño del Arreglo de Clientes: " + TodosLosClientes.size());
+                
+                Montos.get(0).setText(Integer.toString(TodosLosClientes.get(TurnoGlobales).getDienero()));
+                TipoDeClientes.get(0).setText(TodosLosClientes.get(TurnoGlobales).getTipoDeCliente().toString());
+                 Operaciones.get(0).setText(TodosLosClientes.get(TurnoGlobales).getTransaccion().toString());
+                EspaciosDeClientes.get(0).setBackground(TodosLosClientes.get(TurnoGlobales).getColores());
+        
+                CambiarColorAsientos();
             case 2:
-                System.out.println("Cajero 2");
-
+                TurnoGlobales = TodosLosClientes.size() - 1;
+                System.out.println("Inciando las operaciones del Cajero 2");
+                System.out.println("Tamaño del Arreglo de Clientes: " + TodosLosClientes.size());
+                Montos.get(1).setText(Integer.toString(TodosLosClientes.get(TurnoGlobales).getDienero()));
+                TipoDeClientes.get(1).setText(TodosLosClientes.get(TurnoGlobales).getTipoDeCliente().toString());
+                 Operaciones.get(1).setText(TodosLosClientes.get(TurnoGlobales).getTransaccion().toString());
+                EspaciosDeClientes.get(2).setBackground(TodosLosClientes.get(TurnoGlobales).getColores());
+        
+                CambiarColorAsientos();
             case 3:
-                System.out.println("Cajero 3");
+                TurnoGlobales = TodosLosClientes.size() - 1;
+                System.out.println("Inciando las operaciones del Cajero 3");
+                System.out.println("Tamaño del Arreglo de Clientes: " + TodosLosClientes.size());
+                Montos.get(2).setText(Integer.toString(TodosLosClientes.get(TurnoGlobales).getDienero()));
+                TipoDeClientes.get(2).setText(TodosLosClientes.get(TurnoGlobales).getTipoDeCliente().toString());
+                 Operaciones.get(2).setText(TodosLosClientes.get(TurnoGlobales).getTransaccion().toString());
+                EspaciosDeClientes.get(2).setBackground(TodosLosClientes.get(TurnoGlobales).getColores());
+        
+                CambiarColorAsientos();
+        }
 
+        if (TodosLosClientes.size() < 6) {
+            CrearClientesNuevos = 4;
+            CrearClientesNuevos(CrearClientesNuevos);
         }
 
     }
 
-    private static void IniciarLosCajeros() throws InterruptedException {
+    private static void CambiarColorAsientos() {
+        Asientos.get(TurnoGlobales).setBackground(Color.DARK_GRAY);
+        Asientos.get(TurnoGlobales).setForeground(Color.BLACK);
+        Asientos.get(TurnoGlobales).setOpaque(true);
+        TodosLosClientes.remove(TurnoGlobales);
+    }
 
+    private static void CrearClientesNuevos(int NuevosClientes) throws InterruptedException {
+        for (int i = 0; i < NuevosClientes; i++) {
+            System.out.println("Se esta creando el Cliente Nuevo NUMERO: " + (i + 1));
+            Thread.sleep(10);
+            Clientes.CreandoCliente();
+        }
+        TodosLosClientes = Clientes.RecuperarClientes();
+    }
+
+    private static void IniciarLosCajeros() throws InterruptedException {
 
         for (int L = 1; L < 4; L++) {
             Continuar(L);
         }
-         Thread.sleep(500);
+        Thread.sleep(500);
         Cajero1.start();
         Thread.sleep(500);
         Cajero2.start();
