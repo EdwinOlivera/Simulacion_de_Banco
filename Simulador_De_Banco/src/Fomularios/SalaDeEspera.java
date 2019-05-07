@@ -13,8 +13,8 @@ import javax.swing.JProgressBar;
 public class SalaDeEspera extends javax.swing.JFrame {
 
     //Lo necesario Para que se llenen las barras
-    private static int TiempoDeEsPera1=0, TiempoDeEsPera2=0, TiempoDeEsPera3=0;
-    
+    private static int TiempoDeEsPera1 = 0, TiempoDeEsPera2 = 0, TiempoDeEsPera3 = 0;
+
     public SalaDeEspera() {
         initComponents();
     }
@@ -594,7 +594,7 @@ public class SalaDeEspera extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
+
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -621,11 +621,23 @@ public class SalaDeEspera extends javax.swing.JFrame {
     }
 
     public void EstablecerCaracteristicas() {
-        ModificarEtiquetas();
+        //ModificarEtiquetasDeAsiento();
+        ModificarEtiquetasDeEspacioDeClientes();
 
     }
 
-    public void ModificarEtiquetas() {
+    public void ModificarEtiquetasDeEspacioDeClientes() {
+        EspacioCliente1.setOpaque(true);
+        EspacioCliente1.setBackground(Color.GRAY);
+
+        EspacioCliente2.setOpaque(true);
+        EspacioCliente2.setBackground(Color.GRAY);
+
+        EspacioCliente3.setOpaque(true);
+        EspacioCliente3.setBackground(Color.GRAY);
+    }
+
+    public void ModificarEtiquetasDeAsiento() {
         //----------Asientos del 1 al 5------------
         Asiento1.setOpaque(true);
         Asiento1.setBackground(Color.BLACK);
@@ -671,14 +683,14 @@ public class SalaDeEspera extends javax.swing.JFrame {
     }
 
     //FUNCIONES PARA CREAR LOS ARRAYLIS NECESARIOS
-    public ArrayList<JLabel> GuardarArrayListDeEspacioDeClientes(ArrayList<JLabel> ArrayListDeEspacioDeClientes){
-        ArrayListDeEspacioDeClientes.add(0,EspacioCliente1);
-        ArrayListDeEspacioDeClientes.add(1,EspacioCliente2);
-        ArrayListDeEspacioDeClientes.add(2,EspacioCliente3);
-        
+    public ArrayList<JLabel> GuardarArrayListDeEspacioDeClientes(ArrayList<JLabel> ArrayListDeEspacioDeClientes) {
+        ArrayListDeEspacioDeClientes.add(0, EspacioCliente1);
+        ArrayListDeEspacioDeClientes.add(1, EspacioCliente2);
+        ArrayListDeEspacioDeClientes.add(2, EspacioCliente3);
+
         return ArrayListDeEspacioDeClientes;
     }
-    
+
     public ArrayList<JProgressBar> GuardarBarraDeProgresoDeCajeros(ArrayList<JProgressBar> ArrayListDeBarra) {
         //Guarda cada una de las barras de progreso en el ArrayList para poder acceder a ellos despues
         System.out.println(":/ Se guardaran todos Las barras de Progreso en el ArrayList");
@@ -732,9 +744,11 @@ public class SalaDeEspera extends javax.swing.JFrame {
         System.out.println("Fin de la creacion del Arraylist de OPERACION");
         return EspacioDeOperacion;
     }
-    /*********************************************************/
-    
-    
+
+    /**
+     * ******************************************************
+     */
+
     public void EstablecerClientesEnAsiento() {
 
     }
@@ -742,10 +756,10 @@ public class SalaDeEspera extends javax.swing.JFrame {
     //LAS FUNCIONES PARA LAS OPERACIONES DE LOS CAJEROS
     public void CosasDelCajero1() {
         //cabiar de cliente
-            //Verficar que cliente
-            //Cambiar los colores dependiendo del cliente
-            //iniciar el proceso de la barra de progreso
-            //
+        //Verficar que cliente
+        //Cambiar los colores dependiendo del cliente
+        //iniciar el proceso de la barra de progreso
+        //
     }
 
     public void CosasDelCajero2() {

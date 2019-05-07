@@ -155,15 +155,10 @@ public class Simulador_De_Banco extends Thread {
 
         //Probando el comportamiento
         for (int i = 0; i < Asientos.size(); i++) {
-
-            if (i < 1) {
-
                 Asientos.get(i).setBackground(TodosLosClientes.get(i).getColores());
                 Asientos.get(i).setForeground(Color.BLACK);
                 Asientos.get(i).setOpaque(true);
-                Thread.sleep(10);
-
-            }
+                Thread.sleep(500);
         }
         IniciarLosCajeros();
     }
@@ -176,47 +171,49 @@ public class Simulador_De_Banco extends Thread {
                 TurnoGlobales = TodosLosClientes.size() - 1;
                 System.out.println("Inciando las operaciones del Cajero 1");
                 System.out.println("Tamaño del Arreglo de Clientes: " + TodosLosClientes.size());
-                
+
                 Montos.get(0).setText(Integer.toString(TodosLosClientes.get(TurnoGlobales).getDienero()));
                 TipoDeClientes.get(0).setText(TodosLosClientes.get(TurnoGlobales).getTipoDeCliente().toString());
-                 Operaciones.get(0).setText(TodosLosClientes.get(TurnoGlobales).getTransaccion().toString());
+                Operaciones.get(0).setText(TodosLosClientes.get(TurnoGlobales).getTransaccion().toString());
                 EspaciosDeClientes.get(0).setBackground(TodosLosClientes.get(TurnoGlobales).getColores());
-        
+
                 CambiarColorAsientos();
+                break;
             case 2:
                 TurnoGlobales = TodosLosClientes.size() - 1;
                 System.out.println("Inciando las operaciones del Cajero 2");
                 System.out.println("Tamaño del Arreglo de Clientes: " + TodosLosClientes.size());
                 Montos.get(1).setText(Integer.toString(TodosLosClientes.get(TurnoGlobales).getDienero()));
                 TipoDeClientes.get(1).setText(TodosLosClientes.get(TurnoGlobales).getTipoDeCliente().toString());
-                 Operaciones.get(1).setText(TodosLosClientes.get(TurnoGlobales).getTransaccion().toString());
-                EspaciosDeClientes.get(2).setBackground(TodosLosClientes.get(TurnoGlobales).getColores());
-        
+                Operaciones.get(1).setText(TodosLosClientes.get(TurnoGlobales).getTransaccion().toString());
+                EspaciosDeClientes.get(1).setBackground(TodosLosClientes.get(TurnoGlobales).getColores());
+
                 CambiarColorAsientos();
+                break;
             case 3:
                 TurnoGlobales = TodosLosClientes.size() - 1;
                 System.out.println("Inciando las operaciones del Cajero 3");
                 System.out.println("Tamaño del Arreglo de Clientes: " + TodosLosClientes.size());
                 Montos.get(2).setText(Integer.toString(TodosLosClientes.get(TurnoGlobales).getDienero()));
                 TipoDeClientes.get(2).setText(TodosLosClientes.get(TurnoGlobales).getTipoDeCliente().toString());
-                 Operaciones.get(2).setText(TodosLosClientes.get(TurnoGlobales).getTransaccion().toString());
+                Operaciones.get(2).setText(TodosLosClientes.get(TurnoGlobales).getTransaccion().toString());
                 EspaciosDeClientes.get(2).setBackground(TodosLosClientes.get(TurnoGlobales).getColores());
-        
-                CambiarColorAsientos();
-        }
 
-        if (TodosLosClientes.size() < 6) {
-            CrearClientesNuevos = 4;
-            CrearClientesNuevos(CrearClientesNuevos);
+                CambiarColorAsientos();
+                break;
         }
 
     }
 
-    private static void CambiarColorAsientos() {
+    private static void CambiarColorAsientos() throws InterruptedException {
         Asientos.get(TurnoGlobales).setBackground(Color.DARK_GRAY);
         Asientos.get(TurnoGlobales).setForeground(Color.BLACK);
         Asientos.get(TurnoGlobales).setOpaque(true);
         TodosLosClientes.remove(TurnoGlobales);
+        if (TurnoGlobales < 6) {
+            CrearClientesNuevos = 4;
+            CrearClientesNuevos(CrearClientesNuevos);
+        }
     }
 
     private static void CrearClientesNuevos(int NuevosClientes) throws InterruptedException {
