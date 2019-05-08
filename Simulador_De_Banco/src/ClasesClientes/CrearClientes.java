@@ -5,7 +5,7 @@
  */
 package ClasesClientes;
 
-import com.sun.xml.internal.ws.api.message.saaj.SAAJFactory;
+  
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Random;
@@ -39,7 +39,7 @@ public class CrearClientes extends PropiedadesClientes {
         EstablecerTransaccion();
         EstablecerMonto();
 
-        GrupoClientes.add(EspacioDeGuardado,Clientes);
+        GrupoClientes.add(Clientes);
         EspacioDeGuardado++;
         if(EspacioDeGuardado>=10){
             EspacioDeGuardado=0;

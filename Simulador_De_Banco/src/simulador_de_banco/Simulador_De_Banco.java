@@ -31,7 +31,7 @@ public class Simulador_De_Banco extends Thread {
             try {
                 for (ValorBarraCajero_1 = 0; ValorBarraCajero_1 < 100; ValorBarraCajero_1++) {
                     BarrasDeProgreso.get(0).setValue(ValorBarraCajero_1);
-                    Cajero1.sleep(TiempoCajero_1 * 50);
+                    Cajero1.sleep(TiempoCajero_1 * 300);
                     if (ValorBarraCajero_1 == 99 - 1) {
                         ValorBarraCajero_1 = 0;
                         Continuar(1);
@@ -51,10 +51,10 @@ public class Simulador_De_Banco extends Thread {
             try {
                 for (ValorBarraCajero_2 = 0; ValorBarraCajero_2 < 100; ValorBarraCajero_2++) {
                     BarrasDeProgreso.get(1).setValue(ValorBarraCajero_2);
-                    Cajero1.sleep(TiempoCajero_2 * 70);
+                    Cajero1.sleep(TiempoCajero_2 * 250);
                     if (ValorBarraCajero_2 == 100 - 1) {
                         ValorBarraCajero_2 = 0;
-                        Continuar(1);
+                        Continuar(2);
                     }
                 }
             } catch (Exception e) {
@@ -72,7 +72,7 @@ public class Simulador_De_Banco extends Thread {
             try {
                 for (ValorBarraCajero_3 = 0; ValorBarraCajero_3 < 100; ValorBarraCajero_3++) {
                     BarrasDeProgreso.get(2).setValue(ValorBarraCajero_3);
-                    Cajero1.sleep(TiempoCajero_3 * 80);
+                    Cajero1.sleep(TiempoCajero_3 * 400);
                     if (ValorBarraCajero_3 == 100 - 1) {
                         ValorBarraCajero_3 = 0;
                         Continuar(1);
@@ -91,6 +91,7 @@ public class Simulador_De_Banco extends Thread {
     public static int CrearClientesNuevos = 0;//con esta variable se asegura nunca dejar de tener clientes nuevos
 
     //PRIVADAS STATIC
+    
     //ArrayList
     private static ArrayList<PropiedadesClientes> TodosLosClientes = new ArrayList<PropiedadesClientes>();
     private static ArrayList<JLabel> Asientos = new ArrayList<>();
@@ -116,7 +117,8 @@ public class Simulador_De_Banco extends Thread {
         //For Para Crear Clientes a voluntad
         for (int i = 0; i < NumeroDeClientesACrear; i++) {
             System.out.println("Se esta creando el Cliente NUMERO: " + (i + 1));
-            Thread.sleep(10);
+            
+            Thread.sleep(100);
             Clientes.CreandoCliente();
         }
         TodosLosClientes = Clientes.RecuperarClientes();
@@ -140,7 +142,7 @@ public class Simulador_De_Banco extends Thread {
     {
         System.out.println("Se Esta incializando el sistema. Haciendo las operaciones basicas");
         //barras.setVisible(true);
-        TodosLosClientes = Clientes.RecuperarClientes();
+        //TodosLosClientes = Clientes.RecuperarClientes();
         System.out.println("El tamaño de los clientes es: " + TodosLosClientes.size());
         Formulario.setVisible(true);
         Formulario.EstablecerCaracteristicas();//Establece la forma de verse inicialmente el formulario
@@ -157,7 +159,7 @@ public class Simulador_De_Banco extends Thread {
         for (int i = 0; i < Asientos.size(); i++) {
                 Asientos.get(i).setBackground(TodosLosClientes.get(i).getColores());
                 Asientos.get(i).setForeground(Color.BLACK);
-                Asientos.get(i).setOpaque(true);
+                 Asientos.get(i).setOpaque(true);
                 Thread.sleep(500);
         }
         IniciarLosCajeros();
@@ -210,7 +212,7 @@ public class Simulador_De_Banco extends Thread {
         Asientos.get(TurnoGlobales).setForeground(Color.BLACK);
         Asientos.get(TurnoGlobales).setOpaque(true);
         TodosLosClientes.remove(TurnoGlobales);
-        if (TurnoGlobales < 6) {
+        if (TurnoGlobales < 1) {
             CrearClientesNuevos = 4;
             CrearClientesNuevos(CrearClientesNuevos);
         }
@@ -230,13 +232,13 @@ public class Simulador_De_Banco extends Thread {
         for (int L = 1; L < 4; L++) {
             Continuar(L);
         }
-        Thread.sleep(500);
+        //Thread.sleep(500);
         Cajero1.start();
-        Thread.sleep(500);
+        //Thread.sleep(500);
         Cajero2.start();
-        Thread.sleep(500);
+        //Thread.sleep(500);
         Cajero3.start();
-        Thread.sleep(500);
+        //Thread.sleep(500);
     }
 
 }
