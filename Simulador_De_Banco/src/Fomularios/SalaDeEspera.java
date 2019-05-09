@@ -12,9 +12,7 @@ import javax.swing.JProgressBar;
 
 public class SalaDeEspera extends javax.swing.JFrame {
 
-    //Lo necesario Para que se llenen las barras
-    private static int TiempoDeEsPera1 = 0, TiempoDeEsPera2 = 0, TiempoDeEsPera3 = 0;
-
+  
     public SalaDeEspera() {
         initComponents();
     }
@@ -225,7 +223,8 @@ public class SalaDeEspera extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        jLabel8.setText("<html>En los asientos, van los Clientes</html>");
+        jLabel8.setText("<html>En los asientos, van "
+            + "los Clientes</html>");
         jLabel8.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel8.setOpaque(true);
 
@@ -260,31 +259,30 @@ public class SalaDeEspera extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(Asiento5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addGap(18, 18, 18))
+                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Asiento2)
-                            .addComponent(Asiento3)
-                            .addComponent(Asiento4)
-                            .addComponent(Asiento5)
-                            .addComponent(Asiento1))
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Asiento6)
-                            .addComponent(Asiento7)
-                            .addComponent(Asiento8)
-                            .addComponent(Asiento9)
-                            .addComponent(Asiento10))))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Asiento2)
+                    .addComponent(Asiento3)
+                    .addComponent(Asiento4)
+                    .addComponent(Asiento5)
+                    .addComponent(Asiento1))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Asiento6)
+                    .addComponent(Asiento7)
+                    .addComponent(Asiento8)
+                    .addComponent(Asiento9)
+                    .addComponent(Asiento10))
                 .addGap(0, 22, Short.MAX_VALUE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -331,7 +329,7 @@ public class SalaDeEspera extends javax.swing.JFrame {
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(BarraProgreso3, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EspacioCliente3, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(EspacioCliente3, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(0, 0, 0)
                 .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -811,12 +809,12 @@ public class SalaDeEspera extends javax.swing.JFrame {
 
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Asiento1;
+    private static javax.swing.JLabel Asiento1;
     private static javax.swing.JLabel Asiento10;
     private javax.swing.JLabel Asiento2;
-    private javax.swing.JLabel Asiento3;
-    private javax.swing.JLabel Asiento4;
-    private javax.swing.JLabel Asiento5;
+    private static javax.swing.JLabel Asiento3;
+    private static javax.swing.JLabel Asiento4;
+    private static javax.swing.JLabel Asiento5;
     private static javax.swing.JLabel Asiento6;
     private static javax.swing.JLabel Asiento7;
     private static javax.swing.JLabel Asiento8;

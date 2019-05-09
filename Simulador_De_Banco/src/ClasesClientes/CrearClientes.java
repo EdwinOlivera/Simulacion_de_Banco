@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ClasesClientes;
 
   
@@ -10,10 +6,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Random;
 
-/* 
- *
- * @author Edwin
- */
+
 public class CrearClientes extends PropiedadesClientes {
 
     // Objetos 
@@ -91,7 +84,7 @@ public class CrearClientes extends PropiedadesClientes {
 
         switch (MONTO) {
             case 1:
-                MONTO = RMD.nextInt(501);
+                MONTO = RMD.nextInt(501)+50;
                 if (MONTO <= 0) {
                     MONTO++;
                 }

@@ -38,7 +38,7 @@ public class Simulador_De_Banco extends Thread {
                     Cajero1.sleep(TiempoCajero_1 * Cambio_1);
                     if (ValorBarraCajero_1 == 99 - 1) {
                         ValorBarraCajero_1 = 0;
-                        BarrasDeProgreso.get(0).setValue(ValorBarraCajero_1 );
+                        BarrasDeProgreso.get(0).setValue(ValorBarraCajero_1);
                         ContinuarProceso(1);
                     }
                 }
@@ -59,7 +59,7 @@ public class Simulador_De_Banco extends Thread {
                     Cajero2.sleep(TiempoCajero_2 * Cambio_2);
                     if (ValorBarraCajero_2 == 99 - 1) {
                         ValorBarraCajero_2 = 0;
-                                                BarrasDeProgreso.get(1).setValue(ValorBarraCajero_2 );
+                        BarrasDeProgreso.get(1).setValue(ValorBarraCajero_2);
                         ContinuarProceso(2);
                     }
                 }
@@ -81,7 +81,7 @@ public class Simulador_De_Banco extends Thread {
                     Cajero2.sleep(TiempoCajero_3 * Cambio_3);
                     if (ValorBarraCajero_3 == 99 - 1) {
                         ValorBarraCajero_3 = 0;
-                                                BarrasDeProgreso.get(2).setValue(ValorBarraCajero_3 );
+                        BarrasDeProgreso.get(2).setValue(ValorBarraCajero_3);
                         ContinuarProceso(3);
                     }
                 }
@@ -99,6 +99,7 @@ public class Simulador_De_Banco extends Thread {
 
     //PRIVADAS STATIC
     //ArrayList
+    private static ArrayList<ArrayList<PropiedadesClientes>> ClientesGlobables = new ArrayList<ArrayList<PropiedadesClientes>>();
     private static ArrayList<PropiedadesClientes> TodosLosClientes = new ArrayList<PropiedadesClientes>();
     private static ArrayList<JLabel> Asientos = new ArrayList<>();
     private static ArrayList<JLabel> Montos = new ArrayList<>();
@@ -109,7 +110,9 @@ public class Simulador_De_Banco extends Thread {
     //objetos 
     private static SalaDeEspera Formulario = new SalaDeEspera();
     private static CrearClientes Clientes = new CrearClientes();
-    private static VariasBarrasDeProgreso barras = new VariasBarrasDeProgreso();
+    private static PropiedadesClientes Cliente_de_Cajero_1 = new PropiedadesClientes();
+    private static PropiedadesClientes Cliente_de_Cajero_2 = new PropiedadesClientes();
+    private static PropiedadesClientes Cliente_de_Cajero_3 = new PropiedadesClientes();
     //Variables 
     private static Random rdm = new Random(System.currentTimeMillis());
     private static int NumeroDeClientesACrear = 10;
@@ -130,6 +133,7 @@ public class Simulador_De_Banco extends Thread {
             Clientes.CreandoCliente();
         }
         TodosLosClientes = Clientes.RecuperarClientes();
+        ClientesGlobables.add(TodosLosClientes);
         /**
          * System.out.println("Imprimiendo la informacion de Prueba"); for (int
          * i = 0; i < NumeroDeClientesACrear; i++) { System.out.println("Se esta
@@ -140,18 +144,14 @@ public class Simulador_De_Banco extends Thread {
          */
         CosasIniciales();
 
-        //Iniciar los cajeros
-        //IniciarLosCajeros();
-        //Mensaje final
         System.out.println(MensajeFinal);
     }
 
     private static void CosasIniciales() throws InterruptedException//En esta funcion se realizan las operaciones basicas e iniciales de todo el sistema
     {
         System.out.println("Se Esta incializando el sistema. Haciendo las operaciones basicas");
-        //barras.setVisible(true);
-        //TodosLosClientes = Clientes.RecuperarClientes();
         System.out.println("El tamaño de los clientes es: " + TodosLosClientes.size());
+
         Formulario.setVisible(true);
         Formulario.EstablecerCaracteristicas();//Establece la forma de verse inicialmente el formulario
         Asientos = Formulario.GuardarArrayListDeAsientos(Asientos);
@@ -163,7 +163,7 @@ public class Simulador_De_Banco extends Thread {
         Operaciones = Formulario.GuardarArrayListDeOperacion(Operaciones);
         EspaciosDeClientes = Formulario.GuardarArrayListDeEspacioDeClientes(EspaciosDeClientes);
 
-        //Probando el comportamiento
+//Colocando a los clientes en los asientos
         for (int i = 0; i < 10; i++) {
             Asientos.get(i).setBackground(TodosLosClientes.get(i).getColores());
             Asientos.get(i).setForeground(Color.BLACK);
@@ -175,56 +175,101 @@ public class Simulador_De_Banco extends Thread {
 
     private static void ContinuarProceso(int TurnoDecajero) throws InterruptedException {
         System.out.println("<*<*Se esta iniciando un proceso de CAJERO");
-        if(TodosLosClientes.isEmpty()){
+        if (TodosLosClientes.isEmpty()) {
             ComprobarTamanioDeClientes(TurnoDecajero);
         }
         switch (TurnoDecajero) {
             case 1:
                 TurnoGlobales = TodosLosClientes.size() - 1;
+                Cliente_de_Cajero_1 = TodosLosClientes.get(TurnoGlobales);
+                EliminarClienteAtendido();
                 System.out.println("Inciando las operaciones del Cajero 1");
-                Montos.get(0).setText(Integer.toString(TodosLosClientes.get(TurnoGlobales).getDienero()));
-                TipoDeClientes.get(0).setText(TodosLosClientes.get(TurnoGlobales).getTipoDeCliente().toString());
-                Operaciones.get(0).setText(TodosLosClientes.get(TurnoGlobales).getTransaccion().toString());
-                EspaciosDeClientes.get(0).setBackground(TodosLosClientes.get(TurnoGlobales).getColores());
-                //EspaciosDeClientes.get(0).setForeground(Color.WHITE);
-                //CambiarColorAsientos();
+
+                System.out.println("Colocando el espacio del cliente -Cajero 1");
+                EspaciosDeClientes.get(0).setBackground(Cliente_de_Cajero_1.getColores());
+                RealizarPausa(3);
+
+                System.out.println("Colocando el tipo de cliente -Cajero 1");
+                TipoDeClientes.get(0).setText(Cliente_de_Cajero_1.getTipoDeCliente().toString());
+                RealizarPausa(3);
+
+                System.out.println("Colocando el tipo de Operacion -Cajero 1");
+                Operaciones.get(0).setText(Cliente_de_Cajero_1.getTransaccion().toString());
+                RealizarPausa(3);
+
+                System.out.println("Colocando el Monto -Cajero 1");
+                Montos.get(0).setText("L. " + Integer.toString(Cliente_de_Cajero_1.getDienero()));
+                RealizarPausa(3);
+                System.out.println("Fin del proceso para el  Cajero 1");
                 break;
             case 2:
                 TurnoGlobales = TodosLosClientes.size() - 1;
                 System.out.println("Inciando las operaciones del Cajero 2");
-                Montos.get(1).setText(Integer.toString(TodosLosClientes.get(TurnoGlobales).getDienero()));
-                TipoDeClientes.get(1).setText(TodosLosClientes.get(TurnoGlobales).getTipoDeCliente().toString());
-                Operaciones.get(1).setText(TodosLosClientes.get(TurnoGlobales).getTransaccion().toString());
-                EspaciosDeClientes.get(1).setBackground(TodosLosClientes.get(TurnoGlobales).getColores());
-                // EspaciosDeClientes.get(1).setForeground(Color.WHITE);
-                //CambiarColorAsientos();
+                Cliente_de_Cajero_2 = TodosLosClientes.get(TurnoGlobales);
+                EliminarClienteAtendido();
+                System.out.println("Colocando el espacio del cleinte -Cajero 2");
+
+                System.out.println("Colocando el espacio del cliente -Cajero 2");
+                EspaciosDeClientes.get(1).setBackground(Cliente_de_Cajero_2.getColores());
+                RealizarPausa(3);
+
+                System.out.println("Colocando el tipo de cliente -Cajero 2");
+                TipoDeClientes.get(1).setText(Cliente_de_Cajero_2.getTipoDeCliente().toString());
+                RealizarPausa(3);
+
+                System.out.println("Colocando el tipo de Operacion -Cajero 2");
+                Operaciones.get(1).setText(Cliente_de_Cajero_2.getTransaccion().toString());
+                RealizarPausa(3);
+
+                System.out.println("Colocando el Monto -Cajero 2");
+                Montos.get(1).setText("L. " + Integer.toString(Cliente_de_Cajero_2.getDienero()));
+                RealizarPausa(3);
+                System.out.println("Fin del proceso para el  Cajero 2");
                 break;
             case 3:
                 TurnoGlobales = TodosLosClientes.size() - 1;
                 System.out.println("Inciando las operaciones del Cajero 3");
-                Montos.get(2).setText(Integer.toString(TodosLosClientes.get(TurnoGlobales).getDienero()));
-                TipoDeClientes.get(2).setText(TodosLosClientes.get(TurnoGlobales).getTipoDeCliente().toString());
-                Operaciones.get(2).setText(TodosLosClientes.get(TurnoGlobales).getTransaccion().toString());
-                EspaciosDeClientes.get(2).setBackground(TodosLosClientes.get(TurnoGlobales).getColores());
-                // EspaciosDeClientes.get(2).setForeground(Color.WHITE);
+                Cliente_de_Cajero_3 = TodosLosClientes.get(TurnoGlobales);
+                EliminarClienteAtendido();
+                System.out.println("Colocando el espacio del cliente -Cajero 3");
+                EspaciosDeClientes.get(2).setBackground(Cliente_de_Cajero_3.getColores());
+                RealizarPausa(3);
 
+                System.out.println("Colocando el tipo de cliente -Cajero 3");
+                TipoDeClientes.get(2).setText(Cliente_de_Cajero_3.getTipoDeCliente().toString());
+                RealizarPausa(3);
+
+                System.out.println("Colocando el tipo de Operacion -Cajero 3");
+                Operaciones.get(2).setText(Cliente_de_Cajero_3.getTransaccion().toString());
+                RealizarPausa(3);
+
+                System.out.println("Colocando el Monto -Cajero 3");
+                Montos.get(2).setText("L. " + Integer.toString(Cliente_de_Cajero_3.getDienero()));
+                RealizarPausa(3);
+                System.out.println("Fin del proceso para el  Cajero 3");
                 break;
         }
-        CambiarColorAsientos();
+
     }
 
-    private static void CambiarColorAsientos() throws InterruptedException {
+    private static void EliminarClienteAtendido() throws InterruptedException{
+        
         Asientos.get(TurnoGlobales).setBackground(Color.DARK_GRAY);
         Asientos.get(TurnoGlobales).setForeground(Color.WHITE);
         Asientos.get(TurnoGlobales).setOpaque(true);
 
         TodosLosClientes.remove(TurnoGlobales);
+        CambiarColorAsientos();
+
+    }
+    private static void CambiarColorAsientos() throws InterruptedException {
+
         System.out.println("Tamaño del Arreglo de Clientes: " + TodosLosClientes.size());
         ColocarLosClientesEnLosAsientos();
 
-        if (TurnoGlobales < 6) {
-            CrearClientesNuevos = 4;
-            //CrearClientesNuevos(CrearClientesNuevos);
+        if (TurnoGlobales < 3) {
+            CrearClientesNuevos = 7;
+            CrearClientesNuevos(CrearClientesNuevos);
         }
 
     }
@@ -236,34 +281,40 @@ public class Simulador_De_Banco extends Thread {
             Clientes.CreandoCliente();
         }
         TodosLosClientes = Clientes.RecuperarClientes();
-        //ColocarLosClientesEnLosAsientos();
+        ClientesGlobables.add(TodosLosClientes);
+        ColocarLosClientesEnLosAsientos();
     }
 
     private static void IniciarLosCajeros() throws InterruptedException {
 
-        for (int L = 1; L < 4; L++) {
-            ContinuarProceso(L);
-        }
-        CambiarVelocidadDeCarga(1, 1);
-        //Thread.sleep(500);
+        //CambiarVelocidadDeCarga(1, 1);
+        Thread.sleep(500);
+        ContinuarProceso(1);
         Cajero1.start();
-        //Thread.sleep(500);
+
+        Thread.sleep(500);
+        ContinuarProceso(2);
         Cajero2.start();
-        //Thread.sleep(500);
+
+        Thread.sleep(500);
+        ContinuarProceso(3);
         Cajero3.start();
-        //Thread.sleep(500);
     }
 
     private static void ColocarLosClientesEnLosAsientos() {
-        //Probando el comportamiento
-        for (int i = 10; i > 10; i--) {
-            if (TodosLosClientes.get(i) != null) {
-                Asientos.get(i).setBackground(TodosLosClientes.get(i).getColores());
-                Asientos.get(i).setForeground(Color.BLACK);
-                Asientos.get(i).setOpaque(true);
-            }
+        int RetrocederEspacios = 0;
+//Probando el comportamiento
+        for (int i = 9; i > 9 - TodosLosClientes.size(); i--) {
+            RetrocederEspacios++;
+            Asientos.get(i).setBackground(TodosLosClientes.get(TodosLosClientes.size() - RetrocederEspacios).getColores());
+            Asientos.get(i).setForeground(Color.BLACK);
+            Asientos.get(i).setOpaque(true);
 
-            //Thread.sleep(500);
+        }
+        RetrocederEspacios = 0;
+        for (int K = 0; K <= 9 - TodosLosClientes.size(); K++) {
+            Asientos.get(K).setBackground(Color.DARK_GRAY);
+            Asientos.get(K).setForeground(Color.WHITE);
         }
     }
 
@@ -282,28 +333,32 @@ public class Simulador_De_Banco extends Thread {
         }
 
     }
-    
-    private static void ComprobarTamanioDeClientes(int CajeroAComprobar){
-            
-        
-        switch(CajeroAComprobar){
+
+    private static void ComprobarTamanioDeClientes(int CajeroAComprobar) {
+
+        switch (CajeroAComprobar) {
             case 1:
-            System.out.println("El ArrayList de Clientes esta Vacio");
-            Montos.get(0).setText("N/D");
-            TipoDeClientes.get(0).setText("N/D");
-            Operaciones.get(0).setText("N/D");
+                System.out.println("El ArrayList de Clientes esta Vacio");
+
+                Montos.get(0).setText("N/D");
+                TipoDeClientes.get(0).setText("N/D");
+                Operaciones.get(0).setText("N/D");
                 break;
             case 2:
-            Montos.get(1).setText("N/D");
-            TipoDeClientes.get(1).setText("N/D");
-            Operaciones.get(1).setText("N/D");
+                Montos.get(1).setText("N/D");
+                TipoDeClientes.get(1).setText("N/D");
+                Operaciones.get(1).setText("N/D");
                 break;
             case 3:
-            Montos.get(2).setText("N/D");
-            TipoDeClientes.get(2).setText("N/D");
-            Operaciones.get(2).setText("N/D");
+                Montos.get(2).setText("N/D");
+                TipoDeClientes.get(2).setText("N/D");
+                Operaciones.get(2).setText("N/D");
                 break;
         }
 
+    }
+
+    private static void RealizarPausa(int TiempoDePausa) throws InterruptedException {
+        Thread.sleep(TiempoDePausa * 100);
     }
 }
