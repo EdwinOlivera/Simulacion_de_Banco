@@ -8,23 +8,18 @@ package Clase_Principal_simulador_de_banco;
 import ClasesClientes.CrearClientes;
 import ClasesClientes.PropiedadesClientes;
 import Fomularios.SalaDeEspera;
-import Fomularios.VariasBarrasDeProgreso;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 
-/**
- *
- * @author Edwin
- */
 public class Simulador_De_Banco extends Thread {
 
     //Variables para el control de Cambio de Velocidad
-    private static int Cambio_1 = 300;
+    private static int Cambio_1 = 200;
     private static int Cambio_2 = 250;
-    private static int Cambio_3 = 400;
+    private static int Cambio_3 = 300;
     //Iniciadores de las Barras
     //Barra 1
     private static int ValorBarraCajero_1 = 0;
@@ -33,12 +28,16 @@ public class Simulador_De_Banco extends Thread {
         public void run() {
             System.out.println("Iniciando el proceso en el Cajero 1");
             try {
-                for (ValorBarraCajero_1 = 0; ValorBarraCajero_1 <= 100; ValorBarraCajero_1++) {
+                for (ValorBarraCajero_1 = 0; ValorBarraCajero_1 <= 101; ValorBarraCajero_1++) {
                     BarrasDeProgreso.get(0).setValue(ValorBarraCajero_1);
+                    EspaciosDeClientes.get(0).setForeground(Color.BLACK);
+                    EspaciosDeClientes.get(0).setText("Completado: " + Integer.toString(ValorBarraCajero_1) + "%");
                     Cajero1.sleep(TiempoCajero_1 * Cambio_1);
-                    if (ValorBarraCajero_1 == 99 - 1) {
+                    if (ValorBarraCajero_1 == 101 - 1) {
                         ValorBarraCajero_1 = 0;
                         BarrasDeProgreso.get(0).setValue(ValorBarraCajero_1);
+                        EspaciosDeClientes.get(0).setText("Completado: " + Integer.toString(ValorBarraCajero_1) + "%");
+
                         ContinuarProceso(1);
                     }
                 }
@@ -54,12 +53,15 @@ public class Simulador_De_Banco extends Thread {
         public void run() {
             System.out.println("Iniciando el proceso en el Cajero 2");
             try {
-                for (ValorBarraCajero_2 = 0; ValorBarraCajero_2 <= 100; ValorBarraCajero_2++) {
+                for (ValorBarraCajero_2 = 0; ValorBarraCajero_2 <= 101; ValorBarraCajero_2++) {
                     BarrasDeProgreso.get(1).setValue(ValorBarraCajero_2);
+                    EspaciosDeClientes.get(1).setForeground(Color.BLACK);
+                    EspaciosDeClientes.get(1).setText("Completado: " + Integer.toString(ValorBarraCajero_2) + "%");
                     Cajero2.sleep(TiempoCajero_2 * Cambio_2);
-                    if (ValorBarraCajero_2 == 99 - 1) {
+                    if (ValorBarraCajero_2 == 101 - 1) {
                         ValorBarraCajero_2 = 0;
                         BarrasDeProgreso.get(1).setValue(ValorBarraCajero_2);
+                        EspaciosDeClientes.get(1).setText("Completado: " + Integer.toString(ValorBarraCajero_2) + "%");
                         ContinuarProceso(2);
                     }
                 }
@@ -76,12 +78,15 @@ public class Simulador_De_Banco extends Thread {
         public void run() {
             System.out.println("Iniciando el proceso en el Cajero 3");
             try {
-                for (ValorBarraCajero_3 = 0; ValorBarraCajero_3 <= 100; ValorBarraCajero_3++) {
+                for (ValorBarraCajero_3 = 0; ValorBarraCajero_3 <= 101; ValorBarraCajero_3++) {
                     BarrasDeProgreso.get(2).setValue(ValorBarraCajero_3);
+                    EspaciosDeClientes.get(2).setForeground(Color.BLACK);
+                    EspaciosDeClientes.get(2).setText("Completado: " + Integer.toString(ValorBarraCajero_3) + "%");
                     Cajero2.sleep(TiempoCajero_3 * Cambio_3);
-                    if (ValorBarraCajero_3 == 99 - 1) {
+                    if (ValorBarraCajero_3 == 101 - 1) {
                         ValorBarraCajero_3 = 0;
                         BarrasDeProgreso.get(2).setValue(ValorBarraCajero_3);
+                        EspaciosDeClientes.get(2).setText("Completado: " + Integer.toString(ValorBarraCajero_3) + "%");
                         ContinuarProceso(3);
                     }
                 }
@@ -197,6 +202,9 @@ public class Simulador_De_Banco extends Thread {
                 Operaciones.get(0).setText(Cliente_de_Cajero_1.getTransaccion().toString());
                 RealizarPausa(3);
 
+                Cambio_1 = Cambio_1 + ((Cliente_de_Cajero_1.getDienero()) / 25);
+                System.out.println("El tiempo de espera es de: " + (Cambio_1 + TiempoCajero_1));
+
                 System.out.println("Colocando el Monto -Cajero 1");
                 Montos.get(0).setText("L. " + Integer.toString(Cliente_de_Cajero_1.getDienero()));
                 RealizarPausa(3);
@@ -221,6 +229,9 @@ public class Simulador_De_Banco extends Thread {
                 Operaciones.get(1).setText(Cliente_de_Cajero_2.getTransaccion().toString());
                 RealizarPausa(3);
 
+                Cambio_2 = Cambio_2 + ((Cliente_de_Cajero_2.getDienero()) / 25);
+                System.out.println("El tiempo de espera es de: " + (Cambio_2 + TiempoCajero_2));
+
                 System.out.println("Colocando el Monto -Cajero 2");
                 Montos.get(1).setText("L. " + Integer.toString(Cliente_de_Cajero_2.getDienero()));
                 RealizarPausa(3);
@@ -243,7 +254,10 @@ public class Simulador_De_Banco extends Thread {
                 Operaciones.get(2).setText(Cliente_de_Cajero_3.getTransaccion().toString());
                 RealizarPausa(3);
 
+                Cambio_3 = Cambio_3 + ((Cliente_de_Cajero_3.getDienero()) / 25);
+                System.out.println("El tiempo de espera es de: " + (Cambio_3 + TiempoCajero_3));
                 System.out.println("Colocando el Monto -Cajero 3");
+
                 Montos.get(2).setText("L. " + Integer.toString(Cliente_de_Cajero_3.getDienero()));
                 RealizarPausa(3);
                 System.out.println("Fin del proceso para el  Cajero 3");
@@ -252,8 +266,8 @@ public class Simulador_De_Banco extends Thread {
 
     }
 
-    private static void EliminarClienteAtendido() throws InterruptedException{
-        
+    private static void EliminarClienteAtendido() throws InterruptedException {
+
         Asientos.get(TurnoGlobales).setBackground(Color.DARK_GRAY);
         Asientos.get(TurnoGlobales).setForeground(Color.WHITE);
         Asientos.get(TurnoGlobales).setOpaque(true);
@@ -262,6 +276,7 @@ public class Simulador_De_Banco extends Thread {
         CambiarColorAsientos();
 
     }
+
     private static void CambiarColorAsientos() throws InterruptedException {
 
         System.out.println("Tamaño del Arreglo de Clientes: " + TodosLosClientes.size());
@@ -343,16 +358,25 @@ public class Simulador_De_Banco extends Thread {
                 Montos.get(0).setText("N/D");
                 TipoDeClientes.get(0).setText("N/D");
                 Operaciones.get(0).setText("N/D");
+                Montos.get(0).setForeground(Color.red);
+                TipoDeClientes.get(0).setBackground(Color.black);
+                Operaciones.get(0).setOpaque(true);
                 break;
             case 2:
                 Montos.get(1).setText("N/D");
                 TipoDeClientes.get(1).setText("N/D");
                 Operaciones.get(1).setText("N/D");
+                Montos.get(1).setForeground(Color.red);
+                TipoDeClientes.get(1).setBackground(Color.black);
+                Operaciones.get(1).setOpaque(true);
                 break;
             case 3:
                 Montos.get(2).setText("N/D");
                 TipoDeClientes.get(2).setText("N/D");
                 Operaciones.get(2).setText("N/D");
+                Montos.get(2).setForeground(Color.red);
+                TipoDeClientes.get(2).setBackground(Color.black);
+                Operaciones.get(2).setOpaque(true);
                 break;
         }
 

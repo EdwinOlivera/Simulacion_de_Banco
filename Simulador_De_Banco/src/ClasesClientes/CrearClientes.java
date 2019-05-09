@@ -84,10 +84,8 @@ public class CrearClientes extends PropiedadesClientes {
 
         switch (MONTO) {
             case 1:
-                MONTO = RMD.nextInt(501)+50;
-                if (MONTO <= 0) {
-                    MONTO++;
-                }
+                MONTO = RMD.nextInt(501);
+              
                 break;
             case 2:
                 MONTO = RandoMonto.nextInt(501);
@@ -109,7 +107,8 @@ public class CrearClientes extends PropiedadesClientes {
                 MONTO = 0;
                 break;
         }
-        System.out.println("\nEl monto que se establcio es: " + MONTO + "\n");
+        MONTO += 50;
+        System.out.println("\nEl monto que se establecido es: " + MONTO + "\n");
 
         System.out.println("*******************************************");
         Clientes.setDienero(MONTO);

@@ -91,8 +91,6 @@ public class SalaDeEspera extends javax.swing.JFrame {
         lblMonto2 = new javax.swing.JLabel();
         lblMonto3 = new javax.swing.JLabel();
         jSeparator27 = new javax.swing.JSeparator();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -302,6 +300,12 @@ public class SalaDeEspera extends javax.swing.JFrame {
 
         jSeparator15.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+        EspacioCliente1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        EspacioCliente2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
+        EspacioCliente3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -322,16 +326,19 @@ public class SalaDeEspera extends javax.swing.JFrame {
                     .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(EspacioCliente2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BarraProgreso3, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(EspacioCliente3, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(0, 0, 0)
+                            .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(BarraProgreso3, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(EspacioCliente3, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -589,27 +596,6 @@ public class SalaDeEspera extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Sala de Espera", jPanel1);
 
-        jLabel2.setText("Informacion sobre los iconos y colores");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addContainerGap(549, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel2)
-                .addContainerGap(505, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Informacion importante para interpretacion", jPanel2);
-        jPanel2.getAccessibleContext().setAccessibleName("SegundoPanel");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -809,16 +795,16 @@ public class SalaDeEspera extends javax.swing.JFrame {
 
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private static javax.swing.JLabel Asiento1;
-    private static javax.swing.JLabel Asiento10;
+    private javax.swing.JLabel Asiento1;
+    private javax.swing.JLabel Asiento10;
     private javax.swing.JLabel Asiento2;
-    private static javax.swing.JLabel Asiento3;
-    private static javax.swing.JLabel Asiento4;
-    private static javax.swing.JLabel Asiento5;
-    private static javax.swing.JLabel Asiento6;
-    private static javax.swing.JLabel Asiento7;
-    private static javax.swing.JLabel Asiento8;
-    private static javax.swing.JLabel Asiento9;
+    private javax.swing.JLabel Asiento3;
+    private javax.swing.JLabel Asiento4;
+    private javax.swing.JLabel Asiento5;
+    private javax.swing.JLabel Asiento6;
+    private javax.swing.JLabel Asiento7;
+    private javax.swing.JLabel Asiento8;
+    private javax.swing.JLabel Asiento9;
     private javax.swing.JProgressBar BarraProgreso1;
     private javax.swing.JProgressBar BarraProgreso2;
     private javax.swing.JProgressBar BarraProgreso3;
@@ -828,7 +814,6 @@ public class SalaDeEspera extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -838,7 +823,6 @@ public class SalaDeEspera extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
