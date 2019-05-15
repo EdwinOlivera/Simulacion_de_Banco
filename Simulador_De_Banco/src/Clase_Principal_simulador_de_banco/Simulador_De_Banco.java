@@ -104,8 +104,7 @@ public class Simulador_De_Banco extends Thread {
 
     //PRIVADAS STATIC
     //ArrayList
-    private static ArrayList<ArrayList<PropiedadesClientes>> ClientesGlobables = new ArrayList<ArrayList<PropiedadesClientes>>();
-    private static ArrayList<PropiedadesClientes> TodosLosClientes = new ArrayList<PropiedadesClientes>();
+     private static ArrayList<PropiedadesClientes> TodosLosClientes = new ArrayList<PropiedadesClientes>();
     private static ArrayList<JLabel> Asientos = new ArrayList<>();
     private static ArrayList<JLabel> Montos = new ArrayList<>();
     private static ArrayList<JLabel> TipoDeClientes = new ArrayList<>();
@@ -119,7 +118,7 @@ public class Simulador_De_Banco extends Thread {
     private static PropiedadesClientes Cliente_de_Cajero_2 = new PropiedadesClientes();
     private static PropiedadesClientes Cliente_de_Cajero_3 = new PropiedadesClientes();
     //Variables 
-    private static Random rdm = new Random(System.currentTimeMillis());
+ 
     private static int NumeroDeClientesACrear = 10;
     public static String MensajeFinal = "Este es el final del Programa>>>>>*****************";
 
@@ -138,15 +137,7 @@ public class Simulador_De_Banco extends Thread {
             Clientes.CreandoCliente();
         }
         TodosLosClientes = Clientes.RecuperarClientes();
-        ClientesGlobables.add(TodosLosClientes);
-        /**
-         * System.out.println("Imprimiendo la informacion de Prueba"); for (int
-         * i = 0; i < NumeroDeClientesACrear; i++) { System.out.println("Se esta
-         * imprimiendo el Cliente NUMERO: " + (i + 1));
-         *
-         * System.out.println("El tipo de Cliente del actual cliente es: " +
-         * TodosLosClientes.get(i).getTipoDeCliente()); }
-         */
+  
         CosasIniciales();
 
         System.out.println(MensajeFinal);
@@ -296,7 +287,6 @@ public class Simulador_De_Banco extends Thread {
             Clientes.CreandoCliente();
         }
         TodosLosClientes = Clientes.RecuperarClientes();
-        ClientesGlobables.add(TodosLosClientes);
         ColocarLosClientesEnLosAsientos();
     }
 
@@ -333,22 +323,7 @@ public class Simulador_De_Banco extends Thread {
         }
     }
 
-    private static void CambiarVelocidadDeCarga(int BarraACambiar, int Cambio) {
-
-        switch (BarraACambiar) {
-            case 1:
-                TiempoCajero_1 = Cambio;
-                break;
-            case 2:
-                TiempoCajero_2 = Cambio;
-                break;
-            case 3:
-                TiempoCajero_3 = Cambio;
-                break;
-        }
-
-    }
-
+   
     private static void ComprobarTamanioDeClientes(int CajeroAComprobar) {
 
         switch (CajeroAComprobar) {

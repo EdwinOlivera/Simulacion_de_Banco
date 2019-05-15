@@ -778,33 +778,18 @@ public class SalaDeEspera extends javax.swing.JFrame {
 
     }
 
-    //LAS FUNCIONES PARA LAS OPERACIONES DE LOS CAJEROS
-    public void CosasDelCajero1() {
-        //cabiar de cliente
-        //Verficar que cliente
-        //Cambiar los colores dependiendo del cliente
-        //iniciar el proceso de la barra de progreso
-        //
-    }
-
-    public void CosasDelCajero2() {
-
-    }
-
-    public void CosasDelCajero3() {
-
-    }
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Asiento1;
-    private javax.swing.JLabel Asiento10;
+    private static javax.swing.JLabel Asiento1;
+    private static javax.swing.JLabel Asiento10;
     private javax.swing.JLabel Asiento2;
-    private javax.swing.JLabel Asiento3;
-    private javax.swing.JLabel Asiento4;
-    private javax.swing.JLabel Asiento5;
-    private javax.swing.JLabel Asiento6;
-    private javax.swing.JLabel Asiento7;
-    private javax.swing.JLabel Asiento8;
-    private javax.swing.JLabel Asiento9;
+    private static javax.swing.JLabel Asiento3;
+    private static javax.swing.JLabel Asiento4;
+    private static javax.swing.JLabel Asiento5;
+    private static javax.swing.JLabel Asiento6;
+    private static javax.swing.JLabel Asiento7;
+    private static javax.swing.JLabel Asiento8;
+    private static javax.swing.JLabel Asiento9;
     private javax.swing.JProgressBar BarraProgreso1;
     private javax.swing.JProgressBar BarraProgreso2;
     private javax.swing.JProgressBar BarraProgreso3;

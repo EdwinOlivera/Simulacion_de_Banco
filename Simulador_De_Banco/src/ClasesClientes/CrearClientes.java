@@ -33,11 +33,8 @@ public class CrearClientes extends PropiedadesClientes {
         EstablecerMonto();
 
         GrupoClientes.add(Clientes);
-        EspacioDeGuardado++;
-        if(EspacioDeGuardado>=10){
-            EspacioDeGuardado=0;
-        }
-        //GrupoClientes.get().Turno;
+ 
+         
         if (!GrupoClientes.isEmpty()) {
             System.out.println("La cantidad de Clientes Actuales son " + getGrupoClientes().size());
             System.out.println("Se han guardado exitosamente un cliente");
